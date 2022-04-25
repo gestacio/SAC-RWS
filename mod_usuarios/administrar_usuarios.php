@@ -1,5 +1,4 @@
 <?php include_once('../encabezado.php'); ?>
-
 <?php include_once('select_usuarios.php') ?>
 
 <div class="container">
@@ -11,7 +10,7 @@
 
 <div class="container">
     <div class="row justify-content-center">
-        
+
         <div class="col-auto"></div>
         <div class="col-9">
             <table class="table">
@@ -28,8 +27,18 @@
                         <tr>
                             <td><?php echo $usuario['usuario'] ?></td>
                             <td><?php echo $usuario['tipo_usuario'] ?></td>
-                            <td><button class="btn btn-info">Editar</button></td>
-                            <td><button class="btn btn-danger">Eliminar</button></td>
+                            <td>
+                                <form action="editar_usuario.php" method="GET">
+                                    <input type="hidden" value="<?php echo $usuario['usuario'] ?>" name="usuario">
+                                    <button class="btn btn-info" type="submit">Editar</button>
+                                </form>
+                            </td>
+                            <td>
+                                <form action="delete_usuario.php" method="POST">
+                                    <input type="hidden" value="<?php echo $usuario['usuario'] ?>" name="usuario">
+                                    <button onclick="return confirm('Estás seguro de eliminar el usuario?')" class="btn btn-danger" type="submit">Eliminar</button>
+                                </form>
+                            </td>
                         </tr>
                     <?php endforeach ?>
                 </tbody>
