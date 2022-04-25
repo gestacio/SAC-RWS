@@ -1,9 +1,21 @@
-<?php 
+<?php
 include_once('globals.php');
 session_start();
 
 if (!isset($_SESSION['usuario'])) {
-    header('location: login/inicio_sesion.php');
+	header('location: login/inicio_sesion.php');
+}
+
+
+// ------------------------------------------------------
+function titulo_pagina($nombre_titulo) {
+	echo "
+	<div class=\"container\">
+		<div class=\"mx-auto py-5\">
+			<h1 class=\"text-center\">$nombre_titulo</h1>
+			<hr>
+		</div>
+	</div>";
 }
 ?>
 
@@ -17,10 +29,13 @@ if (!isset($_SESSION['usuario'])) {
 	<!-- <link rel="stylesheet" href="./css/fontawesome-all.min.css"> -->
 	<!-- <link rel="stylesheet" href="./css/2.css">
 	<link rel="stylesheet" href="./css/estilo.css"> -->
+	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
-	
- 
-	
+	<!-- Boostrap Icons -->
+	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
+
+
+
 </head>
 
 <body>
@@ -34,13 +49,16 @@ if (!isset($_SESSION['usuario'])) {
 			<div class="collapse navbar-collapse" id="navbarNav">
 				<ul class="navbar-nav">
 					<li class="nav-item">
-						<a class="nav-link" href="<?php echo $inicio ?>">Productos</a>
+						<a class="nav-link" href="<?php echo $productos ?>">Productos</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo $vender ?>">Vender</a>
 					</li>
 					<li class="nav-item">
 						<a class="nav-link" href="<?php echo $ventas ?>">Ventas</a>
+					</li>
+					<li class="nav-item">
+						<a class="nav-link" href="<?php echo $administrar_cuentas ?>">Cuentas</a>
 					</li>
 					<li class="nav-item dropdown">
 						<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
@@ -64,3 +82,4 @@ if (!isset($_SESSION['usuario'])) {
 
 	<div class="container">
 		<div class="row">
+

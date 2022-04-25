@@ -1,5 +1,5 @@
 <?php 
-session_start();
+// session_start();
 include_once "encabezado.php";
 if(!isset($_SESSION["carrito"])) $_SESSION["carrito"] = [];
 $granTotal = 0;
