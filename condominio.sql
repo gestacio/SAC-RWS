@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 25-04-2022 a las 02:38:36
+-- Tiempo de generación: 01-05-2022 a las 09:12:39
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -20,6 +20,48 @@ SET time_zone = "+00:00";
 --
 -- Base de datos: `condominio`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `cuentas`
+--
+
+CREATE TABLE `cuentas` (
+  `id` int(11) NOT NULL,
+  `banco` varchar(200) NOT NULL,
+  `cuenta` varchar(20) NOT NULL,
+  `cedula` varchar(10) NOT NULL,
+  `email` varchar(250) NOT NULL,
+  `fecha_creacion` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `cuentas`
+--
+
+INSERT INTO `cuentas` (`id`, `banco`, `cuenta`, `cedula`, `email`, `fecha_creacion`) VALUES
+(1, 'banesco', '0000', '0000', '0000@mail.com', '2022-04-25');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `pago_movil`
+--
+
+CREATE TABLE `pago_movil` (
+  `id` int(11) NOT NULL,
+  `cedula` varchar(20) NOT NULL,
+  `telefono` varchar(11) NOT NULL,
+  `banco` varchar(60) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `pago_movil`
+--
+
+INSERT INTO `pago_movil` (`id`, `cedula`, `telefono`, `banco`) VALUES
+(1, '25221952', '04241829583', 'banesco');
 
 -- --------------------------------------------------------
 
@@ -63,12 +105,23 @@ INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`, `tipo_usuario`, `fecha_c
 (1, 'gestacio', '123456', 1, '2022-04-24'),
 (2, 'jalen', '123456', 1, '2022-04-24'),
 (3, 'dgomes', '123456', 1, '2022-04-24'),
-(4, 'prueba', '123456', 1, '2022-04-24'),
-(5, 'prueba2', '123456', 1, '2022-04-24');
+(4, 'prueba', '123456', 1, '2022-04-24');
 
 --
 -- Índices para tablas volcadas
 --
+
+--
+-- Indices de la tabla `cuentas`
+--
+ALTER TABLE `cuentas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `pago_movil`
+--
+ALTER TABLE `pago_movil`
+  ADD PRIMARY KEY (`id`);
 
 --
 -- Indices de la tabla `tipo_usuario`
@@ -87,6 +140,18 @@ ALTER TABLE `usuarios`
 --
 -- AUTO_INCREMENT de las tablas volcadas
 --
+
+--
+-- AUTO_INCREMENT de la tabla `cuentas`
+--
+ALTER TABLE `cuentas`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+
+--
+-- AUTO_INCREMENT de la tabla `pago_movil`
+--
+ALTER TABLE `pago_movil`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`

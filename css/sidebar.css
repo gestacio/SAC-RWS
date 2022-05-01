@@ -1,0 +1,14 @@
+#sidebar {
+    width: 20%;
+    height: 100vh;
+    position: fixed;
+    /* background: #343a40; */
+}
+
+#sidebar img {
+    width: 15vw;
+}
+
+#post-side {
+    margin-left: 20%;
+}

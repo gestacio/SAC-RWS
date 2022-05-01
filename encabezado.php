@@ -8,7 +8,8 @@ if (!isset($_SESSION['usuario'])) {
 
 
 // ------------------------------------------------------
-function titulo_pagina($nombre_titulo) {
+function titulo_pagina($nombre_titulo)
+{
 	echo "
 	<div class=\"container\">
 		<div class=\"mx-auto py-5\">
@@ -33,53 +34,19 @@ function titulo_pagina($nombre_titulo) {
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 	<!-- Boostrap Icons -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
-
-
+	<!-- SidebarCSS -->
+	<link rel="stylesheet" href="<?php echo $server.'/css/sidebar.css' ?>">
 
 </head>
 
 <body>
-	<!-- Navbar -->
-	<nav class="navbar navbar-expand-lg navbar-dark bg-dark text-white">
+	<!-- Sidebar -->
+	<?php include_once("sidebar.php") ?>
+	<div class="content w-100" id="post-side">
+		<!-- Navbar -->
+		<?php include_once("topbar.php") ?>
+		<!-- End Navbar -->
+
 		<div class="container">
-			<a class="navbar-brand" href="<?php echo $inicio ?>">Inicio</a>
-			<button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-				<span class="navbar-toggler-icon"></span>
-			</button>
-			<div class="collapse navbar-collapse" id="navbarNav">
-				<ul class="navbar-nav">
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo $productos ?>">Productos</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo $vender ?>">Vender</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo $ventas ?>">Ventas</a>
-					</li>
-					<li class="nav-item">
-						<a class="nav-link" href="<?php echo $administrar_cuentas ?>">Cuentas</a>
-					</li>
-					<li class="nav-item dropdown">
-						<a class="nav-link dropdown-toggle" id="navbarDropdown" role="button" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
-							Usuarios
-						</a>
-						<div class="dropdown-menu">
-							<a class="dropdown-item" href="<?php echo $crear_usuario ?>">Crear Usuario</a>
-							<a class="dropdown-item" href="<?php echo $administrar_usuarios ?>">Administrar Usuarios</a>
-						</div>
-					</li>
-				</ul>
-			</div>
-			<a href="<?php echo $salir ?>">
-				<span class="navbar-text">
-					Salir
-				</span>
-			</a>
-		</div>
-	</nav>
-	<!-- End Navbar -->
-
-	<div class="container">
-		<div class="row">
-
+			<div class="row">
+				
