@@ -3,6 +3,7 @@ if ($_POST) {
     $cedula = $_POST['cedula'];
     $telefono = $_POST['telefono'];
     $banco = $_POST['banco'];
+    $banco = 'banesco';
 
     include_once '../Conexion.php';
     $objeto = new Conexion();
@@ -18,14 +19,14 @@ if ($_POST) {
             $objeto = null;
             echo '<script type="text/javascript">
             alert("Pago Móvil Guardado exitosamente");
-            window.location.replace("administrar_cuentas.php");
+            window.location.replace("pago_movil.php");
             </script>';
 
         } else {
             $objeto = null;
             echo '<script type="text/javascript">
             alert("No se ha podido ingresar correctamente el pago móvil");
-            // window.location.replace("administrar_cuentas.php");
+            // window.location.replace("pago_movil.php");
             </script>';
         }
 

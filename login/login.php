@@ -8,6 +8,11 @@ if ($_POST) {
     $objeto = new Conexion();
     $conexion = $objeto->conectar();
 
+    // $consulta = "SELECT usuario FROM usuarios WHERE usuario='$usuario'";
+    // $resultado = $conexion->prepare($consulta);
+    // $resultado->execute();
+    // $data = $resultado->fetchColumn(0);
+
     try {
         $consulta = "SELECT contraseña FROM usuarios WHERE usuario='$usuario'";
         $resultado = $conexion->prepare($consulta);
@@ -27,7 +32,19 @@ if ($_POST) {
                 // if (isset($_SESSION['usuario'])) { 
                     
                 // }
+            } else {
+                $objeto = null;
+                echo '<script type="text/javascript">
+                alert("Usuario o contraseña incorrecta");
+                window.location.replace("inicio_sesion.php");
+                </script>';
             }
+        } else {
+            $objeto = null;
+            echo '<script type="text/javascript">
+            alert("Usuario o contraseña incorrecta");
+            window.location.replace("inicio_sesion.php");
+            </script>';
         }
         
         $objeto = null;

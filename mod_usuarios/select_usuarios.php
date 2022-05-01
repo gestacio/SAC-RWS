@@ -10,3 +10,4 @@ $resultado = $conexion->prepare($consulta);
 $resultado->execute();
 
 $usuarios = $resultado->fetchAll(PDO::FETCH_ASSOC);
+$objeto = null;

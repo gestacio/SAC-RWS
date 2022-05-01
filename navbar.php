@@ -7,6 +7,10 @@
         <div class="collapse navbar-collapse" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
+                    <a>Bienvenido <?php echo ucfirst($_SESSION['usuario']) ?></a>
+                    <!-- <a class="nav-link" href="#"><?php echo $_SESSION['usuario'] ?></a> -->
+                </li>
+                <!-- <li class="nav-item">
                     <a class="nav-link" href="<?php echo $productos ?>">Productos</a>
                 </li>
                 <li class="nav-item">
@@ -14,7 +18,7 @@
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="<?php echo $ventas ?>">Ventas</a>
-                </li>
+                </li> -->
                 <!-- <li class="nav-item">
                     <a class="nav-link" href="<?php echo $administrar_cuentas ?>">Cuentas</a>
                 </li>

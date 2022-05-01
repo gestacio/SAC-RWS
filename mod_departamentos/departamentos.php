@@ -1,8 +1,7 @@
 <?php include_once('../encabezado.php') ?>
-<?php include_once('select_pago_movil.php') ?>
-<?php include_once('select_bancos.php') ?>
+<?php include_once('select_propietarios.php') ?>
 
-<?php titulo_pagina("Pago Móvil") ?>
+<?php titulo_pagina("Departamentos") ?>
 
 <div class="container">
     <div class="">
@@ -20,7 +19,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Cédula" name="cedula" required>
+                                <input type="text" class="form-control" placeholder="Departamento" name="departamento" required>
                             </div>
                         </div>
                         <div class="col-3">
@@ -28,7 +27,14 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="bi bi-telephone"></i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Nro. Telf." name="telefono" required>
+                                <!-- <input type="text" class="form-control" placeholder="Nro. Telf." name="propietario"> -->
+                                <select name="propietario" class="form-control">
+                                    <option value="">Sin Propietario</option>
+                                    <?php foreach ($propietarios as $propietario) : ?>
+                                        <option value="<?php echo $propietario['nombre'] ?>"><?php echo $propietario['nombre'] ?></option>
+                                        <!-- <option value=""></option> -->
+                                    <?php endforeach ?>
+                                </select>
                             </div>
                         </div>
                         <div class="col-4">
@@ -82,31 +88,6 @@
                             </tr>
                         <?php endforeach ?>
                     </tbody>
-                    <!-- <tr>
-                            <th>1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                        </tr>
-                    </tbody> -->
                 </table>
             </div>
         </div>

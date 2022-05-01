@@ -14,4 +14,8 @@ class Conexion{
             die("El error de Conexión es: ". $e->getMessage());
         }
     }
+
+    // public static function close() {
+    //     $conexion = null;
+    // }
 }

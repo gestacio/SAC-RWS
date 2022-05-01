@@ -1,6 +1,6 @@
 <?php
 if ($_POST) {
-    $banco = $_POST['banco'];
+    $titular = $_POST['titular'];
     $cuenta = $_POST['cuenta'];
     $cedula = $_POST['cedula'];
     $email = $_POST['email'];
@@ -11,8 +11,8 @@ if ($_POST) {
     $conexion = $objeto->conectar();
 
     try {
-        $consulta = "INSERT INTO cuentas (banco, cuenta, cedula, email)
-                    VALUES ('$banco', '$cuenta', '$cedula', '$email')";
+        $consulta = "INSERT INTO cuentas (titular, cuenta, cedula, email)
+                    VALUES ('$titular', '$cuenta', '$cedula', '$email')";
                     
         $resultado = $conexion->prepare($consulta);
 
@@ -20,14 +20,14 @@ if ($_POST) {
             $objeto = null;
             echo '<script type="text/javascript">
             alert("Cuenta Guardada exitosamente");
-            window.location.replace("administrar_cuentas.php");
+            window.location.replace("cuentas.php");
             </script>';
 
         } else {
             $objeto = null;
             echo '<script type="text/javascript">
             alert("No se ha podido ingresar correctamente la cuenta");
-            // window.location.replace("administrar_cuentas.php");
+            // window.location.replace("cuentas.php");
             </script>';
         }
 

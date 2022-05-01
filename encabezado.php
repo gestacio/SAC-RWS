@@ -44,7 +44,7 @@ function titulo_pagina($nombre_titulo)
 	<?php include_once("sidebar.php") ?>
 	<div class="content w-100" id="post-side">
 		<!-- Navbar -->
-		<?php include_once("topbar.php") ?>
+		<?php include_once("navbar.php") ?>
 		<!-- End Navbar -->
 
 		<div class="container">

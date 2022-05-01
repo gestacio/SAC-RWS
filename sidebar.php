@@ -21,6 +21,9 @@
         <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-archive mx-2" aria-hidden="true"></i>Ventas
         </a>
+        <a href="<?php echo $server.'/mod_departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+          <i class="bi bi-house mx-2" aria-hidden="true"></i>Departamentos
+        </a>
 
         <!--  -->
         <!-- <a href="#profile-items" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
@@ -59,8 +62,8 @@
           <a href="<?php echo $server . '/mod_cuentas/pago_movil.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
             Pago Móvil
           </a>
-          <a href="<?php echo $server . '/mod_cuentas/transferencia.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-            Transferencia
+          <a href="<?php echo $server . '/mod_cuentas/cuentas.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            Cuentas
           </a>
         </div> <!-- End Cuentas -->
 
