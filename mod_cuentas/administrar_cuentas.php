@@ -1,4 +1,4 @@
-<?php include_once('../encabezado.php'); ?>
+<?php include_once('../header.php'); ?>
 <?php titulo_pagina("Administrar Cuentas") ?>
 
 
@@ -55,4 +55,4 @@
     </div>
 </div>
 
-<?php include_once('../pie.php'); ?>
+<?php include_once('../footer.php'); ?>

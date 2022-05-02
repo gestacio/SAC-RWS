@@ -1,6 +1,6 @@
 <?php
 if ($_GET) {
-    $usuario = $_GET['usuario'];    
+    $usuario = $_GET['usuario'];
 
     include_once '../Conexion.php';
     $objeto = new Conexion();
@@ -16,12 +16,12 @@ if ($_GET) {
     $resultado->execute();
 
     $usuario = $resultado->fetch(PDO::FETCH_ASSOC);
-    $objeto = null;
+    $objeto->close();
 }
 ?>
 <!-- Inicio Bloque Página -->
 
-<?php include_once('../encabezado.php'); ?>
+<?php include_once('../header.php'); ?>
 
 <div class="container">
     <div class="mx-auto py-5">
@@ -32,37 +32,84 @@ if ($_GET) {
 
 <div class="container">
     <div class="mx-auto">
-        
-        <form action="insert_usuario.php" method="POST">
-            <div class="row">
-                <div class="col-3"></div>
-                <div class="col-6">
-                    <div class="card p-5">
-                        <label for="usuario">Nombre de Usuario</label>
-                        <input type="text" id="usuario" class="form-control mb-3" value="<?php echo $usuario['usuario'] ?>" name="usuario" required>
-                        <label for="contraseña">Contraseña</label>
-                        <input type="password" id="contraseña" class="form-control mb-3" value="<?php echo $usuario['contraseña'] ?>" name="contraseña" required>
-                        <label for="contraseña2">Repetir Contraseña</label>
-                        <input type="password" id="contraseña2" class="form-control mb-3" placeholder="Repite la contraseña" name="contraseña2" required>
-                        <!-- <label for="email">Dirección de correo</label>
-                        <input type="email" id="email" class="form-control" placeholder="Dirección de correo" name="email" required> -->
-                        <label for="tipo_usuario">Tipo de Usuario</label>
-                        <select id="tipo_usuario" class="form-control mb-3" name="tipo_usuario">
-                            <option value="1">Administrador</option>
-                            <option value="2">Cliente</option>
-                        </select>
-                        <br>
-                        <input type="submit" class="btn btn-secondary" value="Guardar">
-                        <br>
-                        <a href="<?php echo $administrar_usuarios ?>" class="btn btn-secondary">Volver</a>
-                    </div>
 
+        <form action="edit_usuario.php" method="POST">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Nombre</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
+                        </div>
+                        <input type="text" class="form-control" value="<?php echo $usuario['nombre'] ?>" name="nombre" required>
+                    </div>
                 </div>
-                <div class="col-3"></div>
+                <div class="form-group col-md-4">
+                    <label for="apellido">Apellido</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
+                        </div>
+                        <input id="apellido" type="text" class="form-control" value="<?php echo $usuario['apellido'] ?>" name="apellido" required>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Usuario</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
+                        </div>
+                        <input type="text" class="form-control" value="<?php echo $usuario['usuario'] ?>" name="usuario" required>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Contraseña</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-123"></i></div>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Contraseña" name="contraseña" required>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Repetir Contraseña</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                        </div>
+                        <input type="password" class="form-control" placeholder="Repetir Contraseña" name="contraseña2" required>
+                    </div>
+                </div>
+                <div class="form-group col-md-4">
+                    <label>Tipo de Usuario</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                        </div>
+                        <select class="form-control" name="tipo_usuario" required>
+                            <option value="">Seleccione</option>
+                            <option value="1">Administrador</option>
+                            <option value="2">Propietario</option>
+                        </select>
+                    </div>
+                </div>
+            </div>
+
+            <div class="form-row justify-content-center">
+                <div class="col-auto">
+                    <button type="submit" class="btn btn-info mb-2">Editar</button>
+                </div>
+                <div class="col-auto">
+                    <a onclick="window.location.href = 'administrar_usuarios.php' " class="btn btn-danger mb-2">volver</a>
+                </div>
             </div>
         </form>
+
 
     </div>
 </div>
 
-<?php include_once('../pie.php'); ?>
+<?php include_once('../footer.php'); ?>

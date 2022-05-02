@@ -12,15 +12,6 @@
         <a href="<?php echo $inicio ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-speedometer mx-2" aria-hidden="true"></i>Inicio
         </a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-archive mx-2" aria-hidden="true"></i>Productos
-        </a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-archive mx-2" aria-hidden="true"></i>Vender
-        </a>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-archive mx-2" aria-hidden="true"></i>Ventas
-        </a>
         <a href="<?php echo $server.'/mod_departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-house mx-2" aria-hidden="true"></i>Departamentos
         </a>
@@ -28,22 +19,8 @@
           <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Calendario
         </a>
 
-        <!--  -->
-        <!-- <a href="#profile-items" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="fa fa-user mr-3" aria-hidden="true"></i>Profile
-        </a>
-        <div id="profile-items" class="collapse" data-parent="#sidebar-accordion">
-          <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-            Item 1
-          </a>
-          <a href="#" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-            Item 2
-          </a>
-        </div>
-        <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="fa fa-shopping-cart mr-3" aria-hidden="true"></i>Buy Now!
-        </a>
-        <a href="#setting-items" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
+        
+        <!-- <a href="#setting-items" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="fa fa-cog mr-3" aria-hidden="true"></i>Settings
         </a>
         <div id="setting-items" class="collapse" data-parent="#sidebar-accordion">

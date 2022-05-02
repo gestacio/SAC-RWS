@@ -29,7 +29,7 @@ if (isset($_SESSION['usuario'])) {
             <div class="col-auto"></div>
             <div class="col-sm-10 col-md-8 col-lg-6">
                 <form class="form-signin" action="login.php" method="POST">
-                    <img class="my-4" src="../img/logo_principal.png" alt="" width="400px">
+                    <img class="my-4" src="../img/logo_siscon_negro.png" alt="Sistema de Condominios" width="400px">
                     <h1 class="h3 mb-3 font-weight-normal">Inicia Sesión</h1>
                     <div class="container px-5 pt-3">
                         <div class="input-group">

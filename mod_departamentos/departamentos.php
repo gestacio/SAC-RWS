@@ -1,4 +1,4 @@
-<?php include_once('../encabezado.php') ?>
+<?php include_once('../header.php') ?>
 <?php include_once('select_propietarios.php') ?>
 
 <?php titulo_pagina("Departamentos") ?>
@@ -111,4 +111,4 @@
     </div>
 </div>
 
-<?php include_once('../pie.php'); ?>
+<?php include_once('../footer.php'); ?>

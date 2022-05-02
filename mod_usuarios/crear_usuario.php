@@ -1,4 +1,4 @@
-<?php include_once('../encabezado.php'); ?>
+<?php include_once('../header.php'); ?>
 
 <div class="container">
     <div class="mx-auto py-5">
@@ -41,4 +41,4 @@
     </div>
 </div>
 
-<?php include_once('../pie.php'); ?>
+<?php include_once('../footer.php'); ?>

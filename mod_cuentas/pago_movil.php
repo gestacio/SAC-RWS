@@ -1,4 +1,4 @@
-<?php include_once('../encabezado.php') ?>
+<?php include_once('../header.php') ?>
 <?php include_once('select_pago_movil.php') ?>
 <?php include_once('select_bancos.php') ?>
 
@@ -60,7 +60,7 @@
                 <p class="text-center">Lista de pago móvil</p>
 
                 <table class="table table-striped">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Cédula</th>
                             <th scope="col">Nro. Telf</th>
@@ -114,4 +114,4 @@
     </div>
 </div>
 
-<?php include_once('../pie.php'); ?>
+<?php include_once('../footer.php'); ?>

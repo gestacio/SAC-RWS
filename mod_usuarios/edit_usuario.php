@@ -11,6 +11,7 @@ if ($_POST) {
     $contraseña2 = $_POST['contraseña2'];
     $tipo_usuario = $_POST['tipo_usuario'];
 
+
     if ($contraseña != $contraseña2) {
         echo '<script type="text/javascript">
             alert("Las contraseñas no coinciden");
@@ -22,7 +23,7 @@ if ($_POST) {
     try {
         $consulta = "INSERT INTO usuarios (nombre, apellido, usuario, contraseña, tipo_usuario)
                     VALUES ('$nombre', '$apellido', '$usuario', '$contraseña', '$tipo_usuario')";
-
+                    
         $resultado = $conexion->prepare($consulta);
 
         if ($resultado->execute()) {
@@ -31,6 +32,7 @@ if ($_POST) {
             alert("Usuario Guardado exitosamente");
             window.location.replace("administrar_usuarios.php");
             </script>';
+
         } else {
             $objeto->close();
             echo '<script type="text/javascript">
@@ -38,9 +40,12 @@ if ($_POST) {
             window.location.replace("administrar_usuarios.php");
             </script>';
         }
-    } catch (PDOException $exception) {
+
+
+    } catch(PDOException $exception) {
         $error = $exception->getMessage();
         echo "An Error has occurred " . $error;
+
     } catch (Exception $e) {
         $objeto->close();
         die("El error de Conexión es: " . $e->getMessage());
@@ -49,5 +54,4 @@ if ($_POST) {
     $objeto->close();
     die("Ha ocurrido un error en el envío del POST");
 }
-
 $objeto->close();

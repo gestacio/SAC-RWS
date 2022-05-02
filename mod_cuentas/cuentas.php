@@ -1,4 +1,4 @@
-<?php include_once('../encabezado.php') ?>
+<?php include_once('../header.php') ?>
 <?php include_once('select_cuentas.php') ?>
 <?php titulo_pagina("Cuentas Transferencia") ?>
 
@@ -66,7 +66,7 @@
                 <p class="text-center">Lista de cuentas</p>
 
                 <table class="table table-striped">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Titular</th>
                             <th scope="col">Cédula</th>
@@ -97,4 +97,4 @@
     </div>
 </div>
 
-<?php include_once('../pie.php'); ?>
+<?php include_once('../footer.php'); ?>

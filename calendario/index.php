@@ -67,7 +67,7 @@ if (isset($_POST['from'])) {
 <!-- <link rel="stylesheet" type="text/css" href="//netdna.bootstrapcdn.com/bootstrap/3.1.1/css/bootstrap.min.css"> -->
 <link rel="stylesheet" href="<?= $base_url ?>css/calendar.css">
 <link href="//maxcdn.bootstrapcdn.com/font-awesome/4.3.0/css/font-awesome.min.css" rel="stylesheet">
-<?= include_once('../encabezado.php') ?>
+<?= include_once('../header.php') ?>
 <div class="page-header">
     <h2></h2>
 </div>
@@ -290,7 +290,7 @@ if (isset($_POST['from'])) {
 <script src="<?= $base_url ?>js/bootstrap-datetimepicker.js"></script>
 <link rel="stylesheet" href="<?= $base_url ?>css/bootstrap-datetimepicker.min.css" />
 <script src="<?= $base_url ?>js/bootstrap-datetimepicker.es.js"></script>
-<?= include_once('../pie.php') ?>
+<?= include_once('../footer.php') ?>
 
 <!-- <!DOCTYPE html>
 <html lang="es">
