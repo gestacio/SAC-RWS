@@ -6,15 +6,14 @@
 <div class="container">
     <div class="">
 
-        <h4 class="pb-2 text-center">Registrar Cuenta Pago Móvil</h4>
+        <h4 class="pb-2 text-center">Registrar Departamento</h4>
 
-        <div class="row aling-items-center">
-            <div class="col-2"></div>
+        <div class="row justify-content-center">
 
-            <div class="col-8">
                 <form action="insert_pago_movil.php" method="POST">
                     <div class="form-row align-items-center">
-                        <div class="col-3">
+
+                        <div class="col-auto">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
@@ -22,22 +21,40 @@
                                 <input type="text" class="form-control" placeholder="Departamento" name="departamento" required>
                             </div>
                         </div>
-                        <div class="col-3">
+
+                        <div class="col-auto">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="bi bi-telephone"></i></div>
                                 </div>
                                 <!-- <input type="text" class="form-control" placeholder="Nro. Telf." name="propietario"> -->
                                 <select name="propietario" class="form-control">
-                                    <option value="">Sin Propietario</option>
+                                    <option value="">Sin Familiares</option>
                                     <?php foreach ($propietarios as $propietario) : ?>
-                                        <option value="<?php echo $propietario['nombre'] ?>"><?php echo $propietario['nombre'] ?></option>
+                                        <option value="<?php echo $propietario['id'] ?>"><?php echo $propietario['usuario'] ?></option>
                                         <!-- <option value=""></option> -->
                                     <?php endforeach ?>
                                 </select>
                             </div>
                         </div>
-                        <div class="col-4">
+
+                        <div class="col-auto">
+                            <div class="input-group mb-2">
+                                <div class="input-group-prepend">
+                                    <div class="input-group-text"><i class="bi bi-telephone"></i></div>
+                                </div>
+                                <!-- <input type="text" class="form-control" placeholder="Nro. Telf." name="propietario"> -->
+                                <select name="inquilinos" class="form-control">
+                                    <option value="">Sin Propietario</option>
+                                    <option value="">Familiar 1</option>
+                                    <option value="">Familiar 2</option>
+                                    <option value="">Familiar 3</option>
+                                    <option value="">Familiar 4</option>
+                                </select>
+                            </div>
+                        </div>
+
+                        <div class="col-auto">
                             <div class="input-group mb-2">
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="bi bi-bank"></i></div>
@@ -52,14 +69,13 @@
                                 </select>
                             </div>
                         </div>
-                        <div class="col-2">
+
+                        <div class="col-auto">
                             <button type="submit" class="btn btn-secondary mb-2">Registrar</button>
                         </div>
                     </div>
                 </form>
             </div>
-
-            <div class="col-2"></div>
 
             <div class="container px-5 my-3">
                 <hr>

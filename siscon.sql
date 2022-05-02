@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 01-05-2022 a las 09:12:39
+-- Tiempo de generación: 02-05-2022 a las 00:05:57
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -24,12 +24,58 @@ SET time_zone = "+00:00";
 -- --------------------------------------------------------
 
 --
+-- Estructura de tabla para la tabla `bancos`
+--
+
+CREATE TABLE `bancos` (
+  `codigo` varchar(4) NOT NULL,
+  `nombre` varchar(500) DEFAULT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `bancos`
+--
+
+INSERT INTO `bancos` (`codigo`, `nombre`) VALUES
+('0001', 'BANCO CENTRAL DE VENEZUELA'),
+('0102', 'BANCO DE VENEZUELA S.A.C.A. BANCO UNIVERSAL'),
+('0104', 'VENEZOLANO DE CRÉDITO, S.A. BANCO UNIVERSAL'),
+('0105', 'BANCO MERCANTIL, C.A. S.A.C.A. BANCO UNIVERSAL'),
+('0108', 'BANCO PROVINCIAL, S.A. BANCO UNIVERSAL'),
+('0114', 'BANCO DEL CARIBE, C.A. BANCO UNIVERSAL'),
+('0115', 'BANCO EXTERIOR, C.A. BANCO UNIVERSAL'),
+('0116', 'BANCO OCCIDENTAL DE DESCUENTO BANCO UNIVERSAL, C.A.'),
+('0128', 'BANCO CARONI, C.A. BANCO UNIVERSAL'),
+('0134', 'BANESCO BANCO UNIVERSAL S.A.C.A.'),
+('0137', 'BANCO SOFITASA BANCO UNIVERSAL, C.A.'),
+('0138', 'BANCO PLAZA, BANCO UNIVERSAL C.A.'),
+('0146', 'BANCO DE LA GENTE EMPRENDEDORA BANGENTE, C.A.'),
+('0149', 'BANCO DEL PUEBLO SOBERANO, BANCO DE DESARROLLO'),
+('0151', 'BFC BANCO FONDO COMUN C.A. BANCO UNIVERSAL'),
+('0157', 'DELSUR BANCO UNIVERSAL, C.A.'),
+('0163', 'BANCO DEL TESORO, C.A. BANCO UNIVERSAL'),
+('0166', 'BANCO AGRICOLA DE VENEZUELA, C.A. BANCO UNIVERSAL'),
+('0168', 'BANCRECER S.A. BANCO DE DESARROLLO'),
+('0169', 'MI BANCO, BANCO MICROFINANCIERO, C.A.'),
+('0171', 'BANCO ACTIVO, C.A. BANCO UNIVERSAL'),
+('0172', 'BANCAMIGA BANCO MICROFINANCIERO, C.A.'),
+('0173', 'BANCO INTERNACIONAL DE DESARROLLO, C.A. BANCO UNIVERSAL'),
+('0174', 'BANPLUS BANCO UNIVERAL, C.A.'),
+('0175', 'BANCO BICENTENARIO BANCO UNIVERSAL, C.A.'),
+('0176', 'NOVO BANCO, S.A. SUCURSAL VENEZUELA BANCO UNIVERSAL'),
+('0177', 'BANCO DE LA FUERZA ARMADA NACIONAL BOLIVARIANA, B.U.'),
+('0190', 'CITIBANK N.A.'),
+('0191', 'BANCO NACIONAL CRÉDITO, C.A. BANCO UNIVERSAL');
+
+-- --------------------------------------------------------
+
+--
 -- Estructura de tabla para la tabla `cuentas`
 --
 
 CREATE TABLE `cuentas` (
   `id` int(11) NOT NULL,
-  `banco` varchar(200) NOT NULL,
+  `titular` varchar(200) NOT NULL,
   `cuenta` varchar(20) NOT NULL,
   `cedula` varchar(10) NOT NULL,
   `email` varchar(250) NOT NULL,
@@ -40,8 +86,25 @@ CREATE TABLE `cuentas` (
 -- Volcado de datos para la tabla `cuentas`
 --
 
-INSERT INTO `cuentas` (`id`, `banco`, `cuenta`, `cedula`, `email`, `fecha_creacion`) VALUES
-(1, 'banesco', '0000', '0000', '0000@mail.com', '2022-04-25');
+INSERT INTO `cuentas` (`id`, `titular`, `cuenta`, `cedula`, `email`, `fecha_creacion`) VALUES
+(1, 'gabriel', '0000', '0000', '0000@mail.com', '2022-04-25'),
+(2, 'Gabriel Estacio', '0134112344567789', '25221952', 'gestacio@mail.com', '2022-05-01'),
+(3, 'Jhon Alen', '0134112344567789', '28331914', 'jalen@mail.com', '2022-05-01');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `departamentos`
+--
+
+CREATE TABLE `departamentos` (
+  `id` int(11) NOT NULL,
+  `departamento` varchar(50) NOT NULL,
+  `propietario` varchar(200) NOT NULL DEFAULT 'Sin Propietario',
+  `area` varchar(50) NOT NULL,
+  `grupo` varchar(50) NOT NULL,
+  `fecha_creacion` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -61,7 +124,9 @@ CREATE TABLE `pago_movil` (
 --
 
 INSERT INTO `pago_movil` (`id`, `cedula`, `telefono`, `banco`) VALUES
-(1, '25221952', '04241829583', 'banesco');
+(1, '25221952', '04241829583', 'banesco'),
+(2, '222222222', '123456789', 'banesco'),
+(3, '321654', '1265498', 'banesco');
 
 -- --------------------------------------------------------
 
@@ -81,7 +146,7 @@ CREATE TABLE `tipo_usuario` (
 
 INSERT INTO `tipo_usuario` (`id`, `tipo_usuario`, `fecha_creacion`) VALUES
 (1, 'Administrador', '2022-04-24'),
-(2, 'Cliente', '2022-04-24');
+(2, 'Propietario', '2022-04-24');
 
 -- --------------------------------------------------------
 
@@ -105,16 +170,28 @@ INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`, `tipo_usuario`, `fecha_c
 (1, 'gestacio', '123456', 1, '2022-04-24'),
 (2, 'jalen', '123456', 1, '2022-04-24'),
 (3, 'dgomes', '123456', 1, '2022-04-24'),
-(4, 'prueba', '123456', 1, '2022-04-24');
+(4, 'prueba', '123456', 2, '2022-04-24');
 
 --
 -- Índices para tablas volcadas
 --
 
 --
+-- Indices de la tabla `bancos`
+--
+ALTER TABLE `bancos`
+  ADD PRIMARY KEY (`codigo`);
+
+--
 -- Indices de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `departamentos`
+--
+ALTER TABLE `departamentos`
   ADD PRIMARY KEY (`id`);
 
 --
@@ -145,13 +222,19 @@ ALTER TABLE `usuarios`
 -- AUTO_INCREMENT de la tabla `cuentas`
 --
 ALTER TABLE `cuentas`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+
+--
+-- AUTO_INCREMENT de la tabla `departamentos`
+--
+ALTER TABLE `departamentos`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
 
 --
 -- AUTO_INCREMENT de la tabla `pago_movil`
 --
 ALTER TABLE `pago_movil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=2;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`

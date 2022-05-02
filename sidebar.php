@@ -1,8 +1,8 @@
 <div class="d-flex">
   <div id="sidebar" class="bg-dark">
     <div class="p-2">
-      <a href="<?php echo $inicio ?>" class="navbar-brand text-center text-light w-100 border-bottom">
-        <img src="<?php echo $server . '/img/logo_oscuro.png' ?>" alt="logo">
+      <a href="<?php echo $inicio ?>" class="navbar-brand text-center text-light w-100 border-bottom p-3">
+        <img src="<?php echo $server . '/img/logo_siscon_gray.png' ?>" alt="logo">
       </a>
     </div>
 
@@ -23,6 +23,9 @@
         </a>
         <a href="<?php echo $server.'/mod_departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-house mx-2" aria-hidden="true"></i>Departamentos
+        </a>
+        <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+          <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Calendario
         </a>
 
         <!--  -->
