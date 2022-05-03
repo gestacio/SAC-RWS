@@ -33,3 +33,10 @@ $datatablesJS = "$server/plugins/datatables.min.js";
 // if (http_response_code() == 404) {
 //     header("location: $inicio");
 // }
+
+
+function my_print_r($array) {
+    echo '<pre>';
+    print_r($array);
+    echo '</pre>';
+}

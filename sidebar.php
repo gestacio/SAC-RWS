@@ -2,7 +2,7 @@
   <div id="sidebar" class="bg-dark">
     <div class="p-2">
       <a href="<?php echo $inicio ?>" class="navbar-brand text-center text-light w-100 border-bottom p-3">
-        <img src="<?php echo $server . '/img/logo_siscon_gray.png' ?>" alt="logo">
+        <img src="<?php echo $server . '/img/prototipo.png' ?>" alt="logo">
       </a>
     </div>
 
@@ -48,7 +48,7 @@
         </div> <!-- End Cuentas -->
 
         <!-- Usuarios -->
-        <a href="#usuarios" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
+        <!-- <a href="#usuarios" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-person-fill mx-2"></i>Usuarios
         </a>
         <div id="usuarios" class="collapse" data-parent="#sidebar-accordion">
@@ -58,7 +58,11 @@
           <a href="<?php echo $administrar_usuarios ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
             Administrar Usuarios
           </a>
-        </div> <!-- End Usuarios -->
+        </div> -->
+        
+        <a href="<?php echo $server.'/mod_usuarios/administrar_usuarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+          <i class="bi bi-person-fill mx-2" aria-hidden="true"></i>Usuarios
+        </a>
         <!-- End Sidebar Accordion -->
 
       </div>

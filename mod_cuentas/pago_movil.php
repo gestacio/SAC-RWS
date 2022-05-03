@@ -38,7 +38,7 @@
                                 </div>
                                 <!-- <input type="text" class="form-control" placeholder="Nro. Telf." name="numero"> -->
                                 <select name="banco" id="" class="form-control" required>
-                                    <option value="">Banco</option>
+                                    <option value="">Seleccione un banco</option>
                                     <?php foreach ($bancos as $banco) : ?>
                                         <option value="<?php echo $banco['nombre'] ?>"><?php echo $banco['nombre'] ?></option>
                                         <!-- <option value=""></option> -->
@@ -77,37 +77,23 @@
                                 <td><?php echo $pago['telefono'] ?></td>
                                 <td><?php echo '0134' ?></td>
                                 <td><?php echo $pago['banco'] ?></td>
-                                <td><button class="btn btn-info">Editar</button></td>
-                                <td><button class="btn btn-danger">Eliminar</button></td>
+                                <td>
+                                    <form action="editar_pago_movil.php">
+                                        <input type="hidden" value="<?php echo $pago['id'] ?>" name="id">
+                                        <input type="submit" class="btn btn-info" value="Editar"></input>
+                                    </form>
+                                </td>
+                                <td>
+                                    <form action="delete_pago_movil.php" method="POST">
+                                        <input type="hidden" value="<?php echo $pago['id'] ?>" name="id">
+                                        <input type="submit" class="btn btn-danger" value="Eliminar"></input>
+                                    </form>
+                                </td>
                             </tr>
                         <?php endforeach ?>
                     </tbody>
-                    <!-- <tr>
-                            <th>1</th>
-                            <td>Mark</td>
-                            <td>Otto</td>
-                            <td>@mdo</td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">2</th>
-                            <td>Jacob</td>
-                            <td>Thornton</td>
-                            <td>@fat</td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                        </tr>
-                        <tr>
-                            <th scope="row">3</th>
-                            <td>Larry</td>
-                            <td>the Bird</td>
-                            <td>@twitter</td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                            <td><button class="btn btn-secondary">hola</button></td>
-                        </tr>
-                    </tbody> -->
                 </table>
+
             </div>
         </div>
 

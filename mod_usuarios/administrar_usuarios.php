@@ -7,10 +7,9 @@
     <div class="row justify-content-center">
 
         <form action="insert_usuario.php" method="POST">
-            <div class="form-row justify-content-center">
-
-                <!-- Nombre -->
-                <div class="col-auto">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Nombre</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
@@ -18,66 +17,64 @@
                         <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
                     </div>
                 </div>
-
-                <!-- Apellido -->
-                <div class="col-auto">
+                <div class="form-group col-md-4">
+                    <label for="apellido">Apellido</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Apellido" name="apellido" required>
+                        <input id="apellido" type="text" class="form-control" placeholder="apellido" name="apellido" required>
                     </div>
                 </div>
-
-                <!-- Cédula -->
-                <div class="col-auto">
+                <div class="form-group col-md-4">
+                    <label>Usuario</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
                         </div>
-                        <input type="text" class="form-control" placeholder="Usuario" name="usuario" required>
+                        <input type="text" class="form-control" placeholder="usuario" name="usuario" required>
                     </div>
                 </div>
+            </div>
 
-                <!-- Nro. Cuenta -->
-                <div class="col-auto">
+            <div class="form-row">
+                <div class="form-group col-md-4">
+                    <label>Contraseña</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-123"></i></div>
+                            <div class="input-group-text"><i class="bi bi-key"></i></div>
                         </div>
                         <input type="password" class="form-control" placeholder="Contraseña" name="contraseña" required>
                     </div>
                 </div>
-
-                <!-- Email -->
-                <div class="col-auto">
+                <div class="form-group col-md-4">
+                    <label>Repetir Contraseña</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                            <div class="input-group-text"><i class="bi bi-key-fill"></i></div>
                         </div>
                         <input type="password" class="form-control" placeholder="Repetir Contraseña" name="contraseña2" required>
                     </div>
                 </div>
-
-                <!-- Email -->
-                <div class="col-auto">
+                <div class="form-group col-md-4">
+                    <label>Tipo de Usuario</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-envelope"></i></div>
+                            <div class="input-group-text"><i class="bi bi-people"></i></div>
                         </div>
-                        <!-- <input type="password" class="form-control" placeholder="Repetir Contraseña" name="contraseña2" required> -->
-                        <select class="form-control" name="tipo_usuario">
+                        <select class="form-control" name="tipo_usuario" required>
+                            <option value="">Seleccione</option>
                             <option value="1">Administrador</option>
                             <option value="2">Propietario</option>
                         </select>
                     </div>
                 </div>
+            </div>
 
-                <!-- Submit -->
+            <div class="form-row justify-content-center">
                 <div class="col-auto">
                     <button type="submit" class="btn btn-secondary mb-2">Registrar</button>
                 </div>
-
             </div>
         </form>
 
@@ -113,7 +110,7 @@
                                 <td>
                                     <form action="delete_usuario.php" method="POST">
                                         <input type="hidden" value="<?php echo $usuario['usuario'] ?>" name="usuario">
-                                        <button onclick="return confirm('Estás seguro de eliminar el usuario?')" class="btn btn-danger" type="submit">Eliminar</button>
+                                        <button class="btn btn-danger" onclick="return confirm('Estás seguro de eliminar el usuario?')" type="submit">Eliminar</button>
                                     </form>
                                 </td>
                             </tr>
