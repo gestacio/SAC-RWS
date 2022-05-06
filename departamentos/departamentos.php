@@ -19,7 +19,7 @@
                                 <div class="input-group-prepend">
                                     <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
                                 </div>
-                                <input type="text" class="form-control" placeholder="Departamento" name="departamento" required>
+                                <input type="text" class="form-control" placeholder="Departamento" name="departamento" required autofocus>
                             </div>
                         </div>
 
