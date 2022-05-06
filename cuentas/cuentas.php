@@ -8,7 +8,7 @@
 
         <h4 class="pb-2 text-center">Registrar Cuenta Transferencia</h4>
 
-        <div class="row aling-items-center">
+        <div class="mx-2 row aling-items-center">
 
             <form action="insert_cuenta.php" method="POST">
                 <div class="form-row align-items-center">
@@ -52,10 +52,13 @@
                             <input type="email" class="form-control" placeholder="Correo" name="email" required>
                         </div>
                     </div>
+                </div>
 
                     <!-- Submit -->
-                    <div class="col-auto">
-                        <button type="submit" class="btn btn-secondary mb-2">Registrar</button>
+                    <div class="form-row justify-content-center">
+                        <div class="col-auto">
+                            <button type="submit" class="btn btn-secondary mb-2">Registrar</button>
+                        </div>
                     </div>
 
                 </div>

@@ -1,76 +1,61 @@
 <?php include_once('../header.php'); ?>
-<?php include_once('../departamentos/select_departamentos.php'); ?>
 <?php include_once('select_propietarios.php') ?>
-<?php titulo_pagina("Propietarios") ?>
+<?php titulo_pagina("Familiares") ?>
 
 <div class="container">
-    <h4 class="pb-2 text-center">Registrar Nuevo Usuario</h4>
+    <h4 class="pb-2 text-center">Registrar Nuevo Familiar</h4>
     <div class="row justify-content-center">
 
-        <form action="insert_propietario.php" method="POST">
+        <form action="insert_familiar.php" method="POST">
             <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label>Nombre</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
-                        </div>
-                        <input type="text" class="form-control" placeholder="Nombre" name="nombre" required>
-                    </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label for="apellido">Apellido</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
-                        </div>
-                        <input id="apellido" type="text" class="form-control" placeholder="apellido" name="apellido" required>
-                    </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Usuario</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
-                        </div>
-                        <input type="text" class="form-control" placeholder="usuario" name="usuario" required>
-                    </div>
-                </div>
-            </div>
-
-            <div class="form-row">
-                <div class="form-group col-md-4">
-                    <label>Contraseña</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-key"></i></div>
-                        </div>
-                        <input type="password" class="form-control" placeholder="Contraseña" name="contraseña" required>
-                    </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Repetir Contraseña</label>
-                    <div class="input-group mb-2">
-                        <div class="input-group-prepend">
-                            <div class="input-group-text"><i class="bi bi-key-fill"></i></div>
-                        </div>
-                        <input type="password" class="form-control" placeholder="Repetir Contraseña" name="contraseña2" required>
-                    </div>
-                </div>
-                <div class="form-group col-md-4">
-                    <label>Departamento</label>
+                <div class="form-group col-md-3">
+                    <label>Propietario</label>
                     <div class="input-group mb-2">
                         <div class="input-group-prepend">
                             <div class="input-group-text"><i class="bi bi-people"></i></div>
                         </div>
-                        <select class="form-control" name="departamento" required>
+                        <select class="form-control" name="propietario" required autofocus>
                             <option value="">Seleccione</option>
-                            <?php foreach ($departamentos as $departamento): ?>
-                                <option value="<?php echo $departamento['id'] ?>"><?php echo $departamento['departamento'] ?></option>
+                            <?php foreach ($propietarios as $propietario) : ?>
+                                <option value="<?php echo $propietario['id'] ?>"><?php echo $propietario['nombre'] ?></option>
                             <?php endforeach ?>
                         </select>
                     </div>
                 </div>
+                <div class="form-group col-md-4">
+                    <label>Nombre y apellido</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-person-lines-fill"></i></div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Nombre y Apellido" name="nombre" required>
+                    </div>
+                </div>
+                <div class="form-group col-md-3">
+                    <label>Tipo de Familiar</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-people"></i></div>
+                        </div>
+                        <select class="form-control" name="tipo_familiar" required>
+                            <option value="">Seleccione</option>
+                            <option value="padre">Padre</option>
+                            <option value="madre">Madre</option>
+                            <option value="hijo">Hijo</option>
+                            <option value="hermano">Hermano</option>
+                        </select>
+                    </div>
+                </div>
+                <div class="form-group col-md-2">
+                    <label>Edad</label>
+                    <div class="input-group mb-2">
+                        <div class="input-group-prepend">
+                            <div class="input-group-text"><i class="bi bi-person-badge"></i></div>
+                        </div>
+                        <input type="text" class="form-control" placeholder="Edad" name="edad" required>
+                    </div>
+                </div>
+
             </div>
 
             <div class="form-row justify-content-center">
@@ -82,7 +67,7 @@
 
         <div class="container px-5 my-3">
             <hr>
-            <p class="text-center">Lista de propietarios</p>
+            <p class="text-center">Lista de familiares</p>
             <!-- <div class="col-auto"></div> -->
             <!-- <div class="col-9"> -->
             <table class="table">

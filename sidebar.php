@@ -18,24 +18,6 @@
         <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Calendario
         </a>
-        <a href="<?php echo $server.'/propietarios/propietarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Propietarios
-        </a>
-
-        
-        <!-- <a href="#setting-items" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="fa fa-cog mr-3" aria-hidden="true"></i>Settings
-        </a>
-        <div id="setting-items" class="collapse" data-parent="#sidebar-accordion">
-          <div class="d-flex flex-row text-center">
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
-              Item 1
-            </a>
-            <a href="#" class="list-group-item list-group-item-action bg-dark text-light">
-              Item 2
-            </a>
-          </div>
-        </div> -->
 
         <!-- Cuentas -->
         <a href="#cuentas" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
@@ -50,19 +32,20 @@
           </a>
         </div> <!-- End Cuentas -->
 
-        <!-- Usuarios -->
-        <!-- <a href="#usuarios" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-person-fill mx-2"></i>Usuarios
+        <!-- Propietarios -->
+        <a href="#propietarios" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
+          <i class="bi bi-people-fill mx-2"></i></i>Propietarios
         </a>
-        <div id="usuarios" class="collapse" data-parent="#sidebar-accordion">
-          <a href="<?php echo $crear_usuario ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-            Crear Usuario
+        <div id="propietarios" class="collapse" data-parent="#sidebar-accordion">
+          <a href="<?php echo $server . '/propietarios/propietarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            Propietarios
           </a>
-          <a href="<?php echo $administrar_usuarios ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
-            Administrar Usuarios
+          <a href="<?php echo $server . '/propietarios/familiares.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+            Familiares
           </a>
-        </div> -->
-        
+        </div> <!-- End propietarios -->
+
+        <!-- Usuarios -->        
         <a href="<?php echo $server.'/usuarios/administrar_usuarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-person-fill mx-2" aria-hidden="true"></i>Usuarios
         </a>
