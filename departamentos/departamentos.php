@@ -1,5 +1,6 @@
 <?php include_once('../header.php') ?>
 <?php include_once('select_propietarios.php') ?>
+<?php include_once('select_departamentos.php') ?>
 
 <?php titulo_pagina("Departamentos") ?>
 
@@ -33,26 +34,26 @@
 
             <div class="container px-5 my-3">
                 <hr>
-                <p class="text-center">Lista de pago móvil</p>
+                <p class="text-center">Lista de Departamentos</p>
 
                 <table class="table table-striped">
                     <thead>
                         <tr>
-                            <th scope="col">Cédula</th>
-                            <th scope="col">Nro. Telf</th>
-                            <th scope="col">Código</th>
-                            <th scope="col">Banco</th>
+                            <th scope="col">Departamento</th>
+                            <!-- <th scope="col"></th>
+                            <th scope="col"></th>
+                            <th scope="col"></th> -->
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($pagos_movil as $pago) : ?>
+                        <?php foreach ($departamentos as $departamento) : ?>
                             <tr>
-                                <td><?php echo $pago['cedula'] ?></td>
-                                <td><?php echo $pago['telefono'] ?></td>
+                                <td><?php echo $departamento['departamento'] ?></td>
+                                <!-- <td><?php echo $pago['telefono'] ?></td>
                                 <td><?php echo '0134' ?></td>
-                                <td><?php echo $pago['banco'] ?></td>
+                                <td><?php echo $pago['banco'] ?></td> -->
                                 <td><button class="btn btn-info">Editar</button></td>
                                 <td><button class="btn btn-danger">Eliminar</button></td>
                             </tr>

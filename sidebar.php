@@ -18,6 +18,9 @@
         <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Calendario
         </a>
+        <a href="<?php echo $server.'/propietarios/propietarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+          <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Propietarios
+        </a>
 
         
         <!-- <a href="#setting-items" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">

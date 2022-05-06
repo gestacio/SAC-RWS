@@ -1,4 +1,9 @@
 <?php
+include_once('Conexion.php');
+// $objeto = new Conexion();
+// $conexion = $objeto->conectar();
+
+
 include_once('globals.php');
 session_start();
 
@@ -25,11 +30,7 @@ function titulo_pagina($nombre_titulo)
 
 <head>
 	<meta charset="UTF-8">
-	<title>SAC RW</title>
-
-	<!-- <link rel="stylesheet" href="./css/fontawesome-all.min.css"> -->
-	<!-- <link rel="stylesheet" href="./css/2.css">
-	<link rel="stylesheet" href="./css/estilo.css"> -->
+	<title>SisCon</title>
 	<!-- Bootstrap -->
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.1/dist/css/bootstrap.min.css" integrity="sha384-zCbKRCUGaJDkqS1kPbPd7TveP5iyJE0EjAuZQTgFLD2ylzuqKfdKlfG/eSrtxUkn" crossorigin="anonymous">
 	<!-- Boostrap Icons -->
