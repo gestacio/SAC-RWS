@@ -20,7 +20,7 @@ if ($_POST) {
             alert("No se ha podido ingresar correctamente el usuario");
             // window.location.replace("departamentos.php");
             </script>';
-            echo (PDO::ERRMODE_EXCEPTION);
+            // echo (PDO::ERRMODE_EXCEPTION);
         }
     }
 } else {

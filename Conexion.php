@@ -22,6 +22,7 @@ class Conexion
     public function insert($consulta)
     {
         $this->conexion = $this->conectar();
+        $this->conexion->setAttribute(PDO::ATTR_ERRMODE, PDO::ERRMODE_EXCEPTION);
         return $this->conexion->exec($consulta);
     }
 
@@ -60,3 +61,20 @@ class Conexion
 }
 
 $conexion = new Conexion();
+
+
+
+function registro_guardado($web_anterior) {
+    echo "<script type='text/javascript'>
+    alert('Registro Guardado exitosamente');
+    window.location.replace('$web_anterior');
+    </script>";
+}
+
+function registro_fallido($ex) {
+    var_dump($ex);
+    echo '<script type="text/javascript">
+        alert("No se ha podido ingresar correctamente el registro");
+        // window.location.replace("propietarios.php");
+        </script>';
+}

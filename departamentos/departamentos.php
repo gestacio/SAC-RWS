@@ -40,9 +40,6 @@
                     <thead>
                         <tr>
                             <th scope="col">Departamento</th>
-                            <!-- <th scope="col"></th>
-                            <th scope="col"></th>
-                            <th scope="col"></th> -->
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
@@ -51,9 +48,6 @@
                         <?php foreach ($departamentos as $departamento) : ?>
                             <tr>
                                 <td><?php echo $departamento['departamento'] ?></td>
-                                <!-- <td><?php echo $pago['telefono'] ?></td>
-                                <td><?php echo '0134' ?></td>
-                                <td><?php echo $pago['banco'] ?></td> -->
                                 <td><button class="btn btn-info">Editar</button></td>
                                 <td><button class="btn btn-danger">Eliminar</button></td>
                             </tr>
