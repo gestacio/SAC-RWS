@@ -4,7 +4,7 @@
      <div class="row">
          <div class="mx-auto p-5">
 
-             <img src="./img/prototipo.png" width="400">
+             <img src="./img/logo_siscon_negro.png" width="500">
          </div>
      </div>
      <!-- <center>

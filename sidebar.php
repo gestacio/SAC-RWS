@@ -2,7 +2,7 @@
   <div id="sidebar" class="bg-dark">
     <div class="p-2">
       <a href="<?php echo $inicio ?>" class="navbar-brand text-center text-light w-100 border-bottom p-3">
-        <img src="<?php echo $server . '/img/prototipo.png' ?>" alt="logo">
+        <img src="<?php echo $server . '/img/logo_siscon_gray.png' ?>" alt="logo">
       </a>
     </div>
 
@@ -12,7 +12,7 @@
         <a href="<?php echo $inicio ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-speedometer mx-2" aria-hidden="true"></i>Inicio
         </a>
-        <a href="<?php echo $server.'/mod_departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+        <a href="<?php echo $server.'/departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-house mx-2" aria-hidden="true"></i>Departamentos
         </a>
         <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
@@ -39,10 +39,10 @@
           <i class="bi bi-credit-card mx-2"></i></i>Cuentas
         </a>
         <div id="cuentas" class="collapse" data-parent="#sidebar-accordion">
-          <a href="<?php echo $server . '/mod_cuentas/pago_movil.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+          <a href="<?php echo $server . '/cuentas/pago_movil.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
             Pago Móvil
           </a>
-          <a href="<?php echo $server . '/mod_cuentas/cuentas.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
+          <a href="<?php echo $server . '/cuentas/cuentas.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">
             Cuentas
           </a>
         </div> <!-- End Cuentas -->
@@ -60,7 +60,7 @@
           </a>
         </div> -->
         
-        <a href="<?php echo $server.'/mod_usuarios/administrar_usuarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+        <a href="<?php echo $server.'/usuarios/administrar_usuarios.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-person-fill mx-2" aria-hidden="true"></i>Usuarios
         </a>
         <!-- End Sidebar Accordion -->

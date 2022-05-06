@@ -9,12 +9,12 @@ $vender = "$server/vender.php";
 $ventas = "$server/ventas.php";
 
 // Usuarios
-$crear_usuario = "$server/mod_usuarios/crear_usuario.php";
-$administrar_usuarios = "$server/mod_usuarios/administrar_usuarios.php";
+$crear_usuario = "$server/usuarios/crear_usuario.php";
+$administrar_usuarios = "$server/usuarios/administrar_usuarios.php";
 
 // Cuentas
-// $crear_usuario = "$server/mod_usuarios/crear_usuario.php";
-$administrar_cuentas = "$server/mod_cuentas/administrar_cuentas.php";
+// $crear_usuario = "$server/usuarios/crear_usuario.php";
+$administrar_cuentas = "$server/cuentas/administrar_cuentas.php";
 
 
 // Index
