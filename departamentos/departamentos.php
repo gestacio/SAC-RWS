@@ -4,6 +4,11 @@
 
 <?php titulo_pagina("Departamentos") ?>
 
+<?php
+// var_dump($departamentos);
+// die();
+?>
+
 <div class="container">
     <div class="">
 
@@ -37,21 +42,25 @@
                 <p class="text-center">Lista de Departamentos</p>
 
                 <table class="table table-striped">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Departamento</th>
+                            <th scope="col">Propietario</th>
+                            <!-- <th scope="col">Propietario</th> -->
                             <th scope="col"></th>
                             <th scope="col"></th>
                         </tr>
                     </thead>
                     <tbody>
-                        <?php foreach ($departamentos as $departamento) : ?>
+                        <?php for ($i=0; $i < count($departamentos); $i++) { ?>
                             <tr>
-                                <td><?php echo $departamento['departamento'] ?></td>
+                                <td><?php echo $departamentos[$i]['departamento'] ?></td>
+                                <td><?php echo boolval($i < count($propietarios)) ? $propietarios[$i]['nombre'] : "Sin propietario" ?></td>
                                 <td><button class="btn btn-info">Editar</button></td>
                                 <td><button class="btn btn-danger">Eliminar</button></td>
                             </tr>
-                        <?php endforeach ?>
+                        <?php } ?>
+                        
                     </tbody>
                 </table>
             </div>

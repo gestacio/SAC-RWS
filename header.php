@@ -37,6 +37,8 @@ function titulo_pagina($nombre_titulo)
 	<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.8.1/font/bootstrap-icons.css">
 	<!-- SidebarCSS -->
 	<link rel="stylesheet" href="<?php echo $server.'/css/sidebar.css' ?>">
+	<!-- CardsCSS -->
+	<link rel="stylesheet" href="<?php echo $server.'/css/cards.css' ?>">
 
 </head>
 

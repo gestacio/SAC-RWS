@@ -1,6 +1,7 @@
 <?php include_once('../header.php'); ?>
 <?php include_once('../departamentos/select_departamentos.php'); ?>
 <?php include_once('select_propietarios.php') ?>
+<?php include_once('select_familiares.php') ?>
 <?php titulo_pagina("Propietarios") ?>
 
 <div class="container">
@@ -65,7 +66,7 @@
                         </div>
                         <select class="form-control" name="departamento" required>
                             <option value="">Seleccione</option>
-                            <?php foreach ($departamentos as $departamento): ?>
+                            <?php foreach ($departamentos_x_propietario as $departamento): ?>
                                 <option value="<?php echo $departamento['id'] ?>"><?php echo $departamento['departamento'] ?></option>
                             <?php endforeach ?>
                         </select>
@@ -85,11 +86,10 @@
             <p class="text-center">Lista de propietarios</p>
             <!-- <div class="col-auto"></div> -->
             <!-- <div class="col-9"> -->
-            <table class="table">
+            <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
                         <th scope="col">Usuario</th>
                         <th scope="col">Departamento</th>
                         <th scope="col">Familiares</th>
@@ -98,27 +98,26 @@
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($propietarios as $propietario) : ?>
+                    <?php for ($i=0; $i<count($propietarios); $i++): ?>
                         <tr>
-                            <td><?php echo $propietario['nombre'] ?></td>
-                            <td><?php echo $propietario['apellido'] ?></td>
-                            <td><?php echo $propietario['usuario'] ?></td>
-                            <td><?php echo $propietario['departamento'] ?></td>
-                            <td>5</td>
+                            <td><?php echo $propietarios[$i]['nombre'] ?></td>
+                            <td><?php echo $propietarios[$i]['usuario'] ?></td>
+                            <td><?php echo $propietarios[$i]['departamento'] ?></td>
+                            <td><?php echo boolval($i < count($count_familiares)) ? $count_familiares[$i]['count_familiares'] : "0" ?></td>
                             <td>
                                 <form action="editar_usuario.php" method="GET">
-                                    <input type="hidden" value="<?php echo $propietario['usuario'] ?>" name="propietario">
+                                    <input type="hidden" value="<?php echo $propietarios[$i]['usuario'] ?>" name="propietario">
                                     <button class="btn btn-info" type="submit">Editar</button>
                                 </form>
                             </td>
                             <td>
                                 <form action="delete_usuario.php" method="POST">
-                                    <input type="hidden" value="<?php echo $propietario['id'] ?>" name="propietario">
+                                    <input type="hidden" value="<?php echo $propietarios[$i]['id'] ?>" name="propietario">
                                     <button class="btn btn-danger" onclick="return confirm('Estás seguro de eliminar el usuario?')" type="submit">Eliminar</button>
                                 </form>
                             </td>
                         </tr>
-                    <?php endforeach ?>
+                    <?php endfor ?>
                 </tbody>
             </table>
         </div>

@@ -15,9 +15,9 @@
         <a href="<?php echo $server.'/departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-house mx-2" aria-hidden="true"></i>Departamentos
         </a>
-        <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
+        <!-- <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Calendario
-        </a>
+        </a> -->
 
         <!-- Cuentas -->
         <a href="#cuentas" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">

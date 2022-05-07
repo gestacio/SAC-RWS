@@ -1,5 +1,6 @@
 <?php include_once('../header.php'); ?>
 <?php include_once('select_propietarios.php') ?>
+<?php include_once('select_familiares.php') ?>
 <?php titulo_pagina("Familiares") ?>
 
 <div class="container">
@@ -70,35 +71,33 @@
             <p class="text-center">Lista de familiares</p>
             <!-- <div class="col-auto"></div> -->
             <!-- <div class="col-9"> -->
-            <table class="table">
+            <table class="table table-striped">
                 <thead class="thead-dark">
                     <tr>
                         <th scope="col">Nombre</th>
-                        <th scope="col">Apellido</th>
-                        <th scope="col">Usuario</th>
-                        <th scope="col">Departamento</th>
-                        <th scope="col">Familiares</th>
+                        <th scope="col">Parentezco</th>
+                        <th scope="col">Edad</th>
+                        <th scope="col">Propietario</th>
                         <th scope="col"></th>
                         <th scope="col"></th>
                     </tr>
                 </thead>
                 <tbody>
-                    <?php foreach ($propietarios as $propietario) : ?>
+                    <?php foreach ($familiares as $familiar) : ?>
                         <tr>
-                            <td><?php echo $propietario['nombre'] ?></td>
-                            <td><?php echo $propietario['apellido'] ?></td>
-                            <td><?php echo $propietario['usuario'] ?></td>
-                            <td><?php echo $propietario['departamento'] ?></td>
-                            <td>5</td>
+                            <td><?php echo $familiar['familiar'] ?></td>
+                            <td><?php echo $familiar['tipo_familiar'] ?></td>
+                            <td><?php echo $familiar['edad'] ?></td>
+                            <td><?php echo $familiar['propietario'] ?></td>
                             <td>
                                 <form action="editar_usuario.php" method="GET">
-                                    <input type="hidden" value="<?php echo $propietario['usuario'] ?>" name="propietario">
+                                    <input type="hidden" value="<?php echo $familiar['nombre'] ?>" name="familiar">
                                     <button class="btn btn-info" type="submit">Editar</button>
                                 </form>
                             </td>
                             <td>
                                 <form action="delete_usuario.php" method="POST">
-                                    <input type="hidden" value="<?php echo $propietario['id'] ?>" name="propietario">
+                                    <input type="hidden" value="<?php echo $familiar['id'] ?>" name="familiar">
                                     <button class="btn btn-danger" onclick="return confirm('Estás seguro de eliminar el usuario?')" type="submit">Eliminar</button>
                                 </form>
                             </td>

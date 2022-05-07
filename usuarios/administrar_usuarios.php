@@ -83,7 +83,7 @@
             <p class="text-center">Lista de cuentas</p>
             <!-- <div class="col-auto"></div> -->
             <!-- <div class="col-9"> -->
-                <table class="table">
+                <table class="table table-striped">
                     <thead class="thead-dark">
                         <tr>
                             <th scope="col">Nombre</th>

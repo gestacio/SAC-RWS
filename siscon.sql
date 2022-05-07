@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 02-05-2022 a las 00:05:57
+-- Tiempo de generación: 07-05-2022 a las 23:50:32
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -18,7 +18,7 @@ SET time_zone = "+00:00";
 /*!40101 SET NAMES utf8mb4 */;
 
 --
--- Base de datos: `condominio`
+-- Base de datos: `siscon`
 --
 
 -- --------------------------------------------------------
@@ -100,11 +100,75 @@ INSERT INTO `cuentas` (`id`, `titular`, `cuenta`, `cedula`, `email`, `fecha_crea
 CREATE TABLE `departamentos` (
   `id` int(11) NOT NULL,
   `departamento` varchar(50) NOT NULL,
-  `propietario` varchar(200) NOT NULL DEFAULT 'Sin Propietario',
-  `area` varchar(50) NOT NULL,
-  `grupo` varchar(50) NOT NULL,
   `fecha_creacion` date NOT NULL DEFAULT current_timestamp()
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `departamentos`
+--
+
+INSERT INTO `departamentos` (`id`, `departamento`, `fecha_creacion`) VALUES
+(1, 'D-01', '2022-05-06'),
+(2, 'D-02', '2022-05-06'),
+(3, 'D-03', '2022-05-06'),
+(4, 'D-04', '2022-05-06'),
+(5, 'D-05', '2022-05-06'),
+(6, 'D-06', '2022-05-06'),
+(7, 'D-07', '2022-05-06'),
+(8, 'D-08', '2022-05-06'),
+(9, 'D-09', '2022-05-06'),
+(10, 'D-10', '2022-05-06'),
+(11, 'D-11', '2022-05-06'),
+(12, 'D-12', '2022-05-06'),
+(13, 'D-13', '2022-05-06'),
+(14, 'D-14', '2022-05-06'),
+(15, 'D-15', '2022-05-06');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `eventos`
+--
+
+CREATE TABLE `eventos` (
+  `id` int(10) UNSIGNED NOT NULL,
+  `title` varchar(150) COLLATE utf8_spanish_ci DEFAULT NULL,
+  `body` text COLLATE utf8_spanish_ci NOT NULL,
+  `url` varchar(150) COLLATE utf8_spanish_ci NOT NULL,
+  `class` varchar(45) COLLATE utf8_spanish_ci NOT NULL DEFAULT 'event-important',
+  `start` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `end` varchar(15) COLLATE utf8_spanish_ci NOT NULL,
+  `inicio_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL,
+  `final_normal` varchar(50) COLLATE utf8_spanish_ci NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8 COLLATE=utf8_spanish_ci;
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `familiares`
+--
+
+CREATE TABLE `familiares` (
+  `id` int(11) NOT NULL,
+  `id_propietario` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `tipo_familiar` varchar(200) NOT NULL,
+  `edad` int(11) NOT NULL,
+  `fcreacion` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `familiares`
+--
+
+INSERT INTO `familiares` (`id`, `id_propietario`, `nombre`, `tipo_familiar`, `edad`, `fcreacion`) VALUES
+(3, 1, 'Wilmer Estacio', 'padre', 53, '2022-05-06'),
+(5, 1, 'Yorkis Estacio', 'hermano', 31, '2022-05-06'),
+(6, 1, 'Gladys Rivas', 'madre', 52, '2022-05-06'),
+(7, 1, 'Esteban Salas', 'hijo', 7, '2022-05-07'),
+(8, 2, 'Alen ALen', 'padre', 50, '2022-05-07'),
+(9, 3, 'Sandra Sisiruca', 'madre', 50, '2022-05-07'),
+(10, 3, 'Jose Gomes', 'padre', 50, '2022-05-07');
 
 -- --------------------------------------------------------
 
@@ -124,9 +188,35 @@ CREATE TABLE `pago_movil` (
 --
 
 INSERT INTO `pago_movil` (`id`, `cedula`, `telefono`, `banco`) VALUES
-(1, '25221952', '04241829583', 'banesco'),
-(2, '222222222', '123456789', 'banesco'),
-(3, '321654', '1265498', 'banesco');
+(1, '25221952', '04241829583', '0134'),
+(2, '10123456', '123456789', '0102'),
+(3, '321654', '1265498', '0102');
+
+-- --------------------------------------------------------
+
+--
+-- Estructura de tabla para la tabla `propietarios`
+--
+
+CREATE TABLE `propietarios` (
+  `id` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `apellido` varchar(200) NOT NULL,
+  `usuario` varchar(200) NOT NULL,
+  `contraseña` varchar(200) NOT NULL,
+  `id_departamento` int(11) NOT NULL,
+  `fcreacion` date NOT NULL DEFAULT current_timestamp()
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
+
+--
+-- Volcado de datos para la tabla `propietarios`
+--
+
+INSERT INTO `propietarios` (`id`, `nombre`, `apellido`, `usuario`, `contraseña`, `id_departamento`, `fcreacion`) VALUES
+(1, 'Gabriel', 'Estacio', 'gestacio', '123456', 1, '2022-05-06'),
+(2, 'Jhon', 'Alen', 'jalen', '123456', 2, '2022-05-06'),
+(3, 'Diana', 'Gomes', 'dgomes', '123456', 3, '2022-05-06'),
+(6, 'Propietario', 'De prueba', 'pprueba', '123456', 4, '2022-05-07');
 
 -- --------------------------------------------------------
 
@@ -156,6 +246,8 @@ INSERT INTO `tipo_usuario` (`id`, `tipo_usuario`, `fecha_creacion`) VALUES
 
 CREATE TABLE `usuarios` (
   `id` int(11) NOT NULL,
+  `nombre` varchar(200) NOT NULL,
+  `apellido` varchar(200) NOT NULL,
   `usuario` varchar(64) NOT NULL,
   `contraseña` varchar(64) NOT NULL,
   `tipo_usuario` int(11) NOT NULL,
@@ -166,11 +258,12 @@ CREATE TABLE `usuarios` (
 -- Volcado de datos para la tabla `usuarios`
 --
 
-INSERT INTO `usuarios` (`id`, `usuario`, `contraseña`, `tipo_usuario`, `fecha_creacion`) VALUES
-(1, 'gestacio', '123456', 1, '2022-04-24'),
-(2, 'jalen', '123456', 1, '2022-04-24'),
-(3, 'dgomes', '123456', 1, '2022-04-24'),
-(4, 'prueba', '123456', 2, '2022-04-24');
+INSERT INTO `usuarios` (`id`, `nombre`, `apellido`, `usuario`, `contraseña`, `tipo_usuario`, `fecha_creacion`) VALUES
+(1, 'Gabriel', 'Estacio', 'gestacio', '123456', 1, '2022-04-24'),
+(6, 'Jhon', 'Alen', 'jalen', '123456', 1, '2022-05-01'),
+(7, 'Diana', 'Gomes', 'dgomes', '123456', 1, '2022-05-01'),
+(8, 'nombre', 'apellido', 'napellido', '123456', 2, '2022-05-01'),
+(9, 'prueba', 'prueba2', 'prueba5', '123456', 2, '2022-05-01');
 
 --
 -- Índices para tablas volcadas
@@ -195,10 +288,30 @@ ALTER TABLE `departamentos`
   ADD PRIMARY KEY (`id`);
 
 --
+-- Indices de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `familiares`
+--
+ALTER TABLE `familiares`
+  ADD PRIMARY KEY (`id`);
+
+--
 -- Indices de la tabla `pago_movil`
 --
 ALTER TABLE `pago_movil`
   ADD PRIMARY KEY (`id`);
+
+--
+-- Indices de la tabla `propietarios`
+--
+ALTER TABLE `propietarios`
+  ADD PRIMARY KEY (`id`),
+  ADD UNIQUE KEY `usuario_propietario` (`usuario`),
+  ADD UNIQUE KEY `departemento_propietario` (`id_departamento`);
 
 --
 -- Indices de la tabla `tipo_usuario`
@@ -228,13 +341,31 @@ ALTER TABLE `cuentas`
 -- AUTO_INCREMENT de la tabla `departamentos`
 --
 ALTER TABLE `departamentos`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=16;
+
+--
+-- AUTO_INCREMENT de la tabla `eventos`
+--
+ALTER TABLE `eventos`
+  MODIFY `id` int(10) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
+-- AUTO_INCREMENT de la tabla `familiares`
+--
+ALTER TABLE `familiares`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=11;
 
 --
 -- AUTO_INCREMENT de la tabla `pago_movil`
 --
 ALTER TABLE `pago_movil`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=4;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=5;
+
+--
+-- AUTO_INCREMENT de la tabla `propietarios`
+--
+ALTER TABLE `propietarios`
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=7;
 
 --
 -- AUTO_INCREMENT de la tabla `tipo_usuario`
@@ -246,7 +377,7 @@ ALTER TABLE `tipo_usuario`
 -- AUTO_INCREMENT de la tabla `usuarios`
 --
 ALTER TABLE `usuarios`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=6;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
 
 --
 -- Restricciones para tablas volcadas

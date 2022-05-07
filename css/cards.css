@@ -1,0 +1,39 @@
+#card {
+    padding: 1rem;
+    text-decoration: none;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+.bg-marron {
+    /* background-color: brown; */
+    /* background-color: #ffa43a; */
+    /* background-color: #75c7ff; */
+    background-color: #759eff;
+}
+
+.bg-rebecca-purpura {
+    /* background-color: rebeccapurple; */
+    background-color: #ffbf75;
+}
+
+.bg-purpura {
+    /* background-color: purple; */
+    /* background-color: #759eff; */
+    background-color: #75c7ff;
+}
+
+.bg-azul-violeta {
+    /* background-color: blueviolet; */
+    /* background-color: #75c7ff; */
+    background-color: #ffa43a;
+}
+
+#card .bi {
+    font-size: 4rem ;
+    position: absolute;
+    /* bottom: 0; */
+    margin-top: 1rem;
+}

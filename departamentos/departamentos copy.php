@@ -82,7 +82,7 @@
                 <p class="text-center">Lista de pago móvil</p>
 
                 <table class="table table-striped">
-                    <thead>
+                    <thead class="thead-dark">
                         <tr>
                             <th scope="col">Cédula</th>
                             <th scope="col">Nro. Telf</th>
