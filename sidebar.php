@@ -13,7 +13,7 @@
           <i class="bi bi-speedometer mx-2" aria-hidden="true"></i>Inicio
         </a>
         <a href="<?php echo $server.'/departamentos/departamentos.php' ?>" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-house mx-2" aria-hidden="true"></i>Departamentos
+          <i class="bi bi-house-fill mx-2" aria-hidden="true"></i>Departamentos
         </a>
         <!-- <a href="<?php echo $server.'/calendario' ?>" class="list-group-item list-group-item-action bg-dark text-light">
           <i class="bi bi-calendar mx-2" aria-hidden="true"></i>Calendario
@@ -21,7 +21,7 @@
 
         <!-- Cuentas -->
         <a href="#cuentas" data-toggle="collapse" aria-expanded="false" class="list-group-item list-group-item-action bg-dark text-light">
-          <i class="bi bi-credit-card mx-2"></i></i>Cuentas
+          <i class="bi bi-credit-card-fill mx-2"></i></i>Cuentas
         </a>
         <div id="cuentas" class="collapse" data-parent="#sidebar-accordion">
           <a href="<?php echo $server . '/cuentas/pago_movil.php' ?>" class="list-group-item list-group-item-action bg-dark text-light pl-5">

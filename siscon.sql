@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Servidor: 127.0.0.1
--- Tiempo de generación: 07-05-2022 a las 23:50:32
+-- Tiempo de generación: 08-05-2022 a las 02:13:46
 -- Versión del servidor: 10.4.22-MariaDB
 -- Versión de PHP: 7.4.27
 
@@ -201,7 +201,6 @@ INSERT INTO `pago_movil` (`id`, `cedula`, `telefono`, `banco`) VALUES
 CREATE TABLE `propietarios` (
   `id` int(11) NOT NULL,
   `nombre` varchar(200) NOT NULL,
-  `apellido` varchar(200) NOT NULL,
   `usuario` varchar(200) NOT NULL,
   `contraseña` varchar(200) NOT NULL,
   `id_departamento` int(11) NOT NULL,
@@ -212,11 +211,11 @@ CREATE TABLE `propietarios` (
 -- Volcado de datos para la tabla `propietarios`
 --
 
-INSERT INTO `propietarios` (`id`, `nombre`, `apellido`, `usuario`, `contraseña`, `id_departamento`, `fcreacion`) VALUES
-(1, 'Gabriel', 'Estacio', 'gestacio', '123456', 1, '2022-05-06'),
-(2, 'Jhon', 'Alen', 'jalen', '123456', 2, '2022-05-06'),
-(3, 'Diana', 'Gomes', 'dgomes', '123456', 3, '2022-05-06'),
-(6, 'Propietario', 'De prueba', 'pprueba', '123456', 4, '2022-05-07');
+INSERT INTO `propietarios` (`id`, `nombre`, `usuario`, `contraseña`, `id_departamento`, `fcreacion`) VALUES
+(1, 'Gabriel Estacio', 'gestacio', '123456', 1, '2022-05-06'),
+(2, 'Jhon Alen', 'jalen', '123456', 2, '2022-05-06'),
+(3, 'Diana Gomes', 'dgomes', '123456', 3, '2022-05-06'),
+(6, 'Propietario Prueba', 'pprueba', '123456', 4, '2022-05-07');
 
 -- --------------------------------------------------------
 
